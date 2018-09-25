@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+	
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:700i" rel="stylesheet">
+	<link rel="stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href ="css/styles.css">
+	<link rel="stylesheet" href ="css/animate.css">
+	
+	<script>
+		$(document).ready(function(){
+		// Add smooth scrolling to all links
+		$("a").on('click', function(event) {
+		
+		// Make sure this.hash has a value before overriding default behavior
+		if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+         scrollTop: $(hash).offset().top
+         }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+	</script>
+	
+	
+
+</head>
+<body>
+<title> 
+	Khoa D. Nguyen
+</title>
+<div class = "tabs-container">
+	<a id = "h01" href = "index.htm">Home</a>
+	<a id = "h01" href = "#About-section">About</a>
+	<a id = "h01" href = "#PortfolioRef">Portfolio</a>
+	<a id = "h01" href = "files/Resume.pdf" target = "_blank">Resume</a>
+	<a id = "h02" href = "#Contact-section">Contact</a>
+	<div>
+		<a href = "https://github.com/dkhoan8" target = "_blank"><img id = "h03" src = "image/GitHubIcon32.png"></a>
+	</div>
+	<div id = "MyName" style = "position: absolute;margin: auto;right: 75%; color: white; font-family: Ubuntu; font-size: 120%; top: 10px; max-width: 200px; max-height: 20px;">
+		<a href = "index.htm" style = "color:white;text-decoration:none;">Khoa D.Nguyen</a>
+	</div>
+</div>
+<!--Opener section-->
+<div class = "opener">
+	<!--<img id = "openerBG" src = "image/office.jpg">-->
+	<div class = "container animated shake">
+		<div class = "Intro">
+			Hi, I'm Khoa Nguyen.<br>Software/Game Developer.
+		</div>
+		
+		<a href = "files/Resume.pdf" style = "text-decoration:none" target = "_blank">
+		<div class = "Resume">
+			Resume
+		</div>
+		</a>
+
+		<div class = "Projects">
+			<button class="dropbtn">Projects</button>
+			<div class="dropdown-content">
+				<a href="https://github.com/dkhoan8/Operating-System-Project">Operating System Scheduling Algorithm</a>
+				<a href="https://github.com/dkhoan8/Pong-Server-and-Website">Websocket Multiplayer System <br>(Pong Server)</a>
+				<a href="https://github.com/dkhoan8/Sudoku-AI-Project">AI Sudoku Solver</a>
+				<a href="https://github.com/thetylerace13/ICS168Project2-New">Unity Game: DodgeBall2D (Multiplayer)</a>
+				<a href="https://github.com/thetylerace13/ICS168Project3">Unity Mobile Game Prototype(Android and IOS)</a>	
+			</div>
+		</div>	
+	</div>
+</div>
+
+<!--About section-->
+<div id = "About-section" style = "position:absolute;top:950px;"></div>
+<div class = "About">
+	<section>
+		<div class = "Me">
+			<div id = "AboutMe" style = "text-align: center; padding: 20px;">
+				About Me		
+			</div>
+			<img src = "image/handsome.jpeg" style = " padding-top: 20px; vertical-align: center; width:200px; height: 200px; border-radius:50%">
+			<div id = "AboutMePara" style = "text-align: center; padding: 20px; color: #777">
+				Exposing to programming at young age and have been coding ever since.<br>
+				Majoring in CS/CGS at UCI in 2016, most of my projects and favorite<br>
+				subjects are all related to Application Design & Development(Software and Game),<br>
+				Artificial Intelligence, and Networking.
+			</div>
+		</div>
+		
+		<div class = "Skills">
+			<div id = "AboutMe" style = "text-align: center; padding: 20px;">
+				Skills		
+			</div>
+			<div id = "_Invi" style = "position:relative;width:50%;height: 90%;float:left; padding: 50px;text-align:center;background-color: none;">
+				<canvas id = "LangSkill" style = "width:100%;height:100%"></canvas>
+			</div>
+			<div id = "_Invi" style = "position:relative;width:50%;height: 90%;float:right; padding: 50px;text-align:center;background-color: none">
+				<canvas id = "ToolSkill" style = "width:100%;height:100%"></canvas>
+			</div>
+		</div>
+	
+		<div class = "Course">
+			<div id = "AboutMe" style = "text-align: center; padding: 20px;">
+				Courses	
+			</div>
+			
+			<div  id = "_Invi" style = "display: inline-block;text-align: center; position:relative;width: 30%; height: 80%;background-color:none; float: left">
+				<canvas id = "CS" style = "width:100%;height:100%"></canvas>
+			</div>
+			
+			<div  id = "_Invi" style = "display: inline-block;text-align: center; position:relative;width: 30%; height: 80%;background-color:none;left: 5%">
+				<canvas id = "Math" style = "width:100%;height:100%"></canvas>
+			</div>
+			
+			<div  id = "_Invi" style = "display: inline-block;text-align: center; position:relative;width: 30%; height: 80%;background-color:none;float: right">
+				<canvas id = "GE" style = "width:100%;height:100%"></canvas>
+			</div>
+		</div>
+		
+		<!--Portfolio section-->
+		<div id = "PortfolioRef" style = "position:absolute;top:1450px;"></div>
+		<div class = "Portfolio">
+			<section id = "Portfolio-section" style = "text-align:center;  padding: 20px; family-font: Lato; color: white;">
+				Portfolio
+			</section>
+			<table style = "width: 70%; margin-left: 15%; margin-right: 15%;">
+			<tr>
+				<td align = "center">
+					<div style = "width: 200px; height: 200px; padding: 20px; background-color: none">
+						<img src = "image/Unity-green.png" style = "max-width: 100%; max-height: 100%;">
+					</div>
+				</td>
+				<td align = "center">
+					<div style = "width: 200px; height: 200px; padding: 20px; background-color: none">
+						<img src = "image/visual-studio.png" style = "max-width: 100%; max-height: 100%;">
+					</div>
+				</td>
+				<td align = "center"> 
+					<div style = "width: 200px; height: 200px; padding: 20px; background-color: none">
+						<img src = "image/atom.png" style = "max-width: 100%; max-height: 100%;">
+					</div>
+				</td align = "center">
+				<td align = "center">
+					<div style = "width: 200px; height: 200px; padding: 20px; background-color: none">
+						<img src = "image/notepad.png" style = "max-width: 100%; max-height: 100%;">
+					</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align = "center">
+					<div style = "width: 200px; height: 200px; padding: 20px; background-color: none">
+						<img src = "image/operating-system.png" style = "max-width: 100%; max-height: 100%;">
+					</div>
+				</td>
+				<td align = "center">
+					<div style = "width: 200px; height: 200px; padding: 20px; background-color: none">
+						<img src = "image/AI.png" style = "max-width: 100%; max-height: 100%;">
+					</div>
+				</td>
+				<td align = "center">
+					<div style = "width: 200px; height: 200px; padding: 20px; background-color: none">
+						<img src = "image/game.jpg" style = "max-width: 100%; max-height: 100%; border-radius: 50%;">
+					</div>
+				</td>
+				<td align = "center">
+					<div style = "width: 200px; height: 200px; padding: 20px; background-color: none">
+						<img src = "image/websocket.jpg" style = "max-width: 100%; max-height: 100%;">
+					</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align = "center">
+					<div style = "width: 200px; height: 200px; padding: 20px; background-color: none">
+						<img src = "image/Cpp.png" style = "max-width: 100%; max-height: 100%;">
+					</div>
+				</td>
+				<td align = "center">
+					<div style = "width: 200px; height: 200px; padding: 20px; background-color: none">
+						<img src = "image/cSharp.png" style = "max-width: 100%; max-height: 100%;">
+					</div>
+				</td>
+				<td align = "center">
+					<div style = "width: 200px; height: 200px; padding: 20px; background-color: none">
+						<img src = "image/java.png" style = "max-width: 100%; max-height: 100%;">
+					</div>
+				</td>
+				<td align = "center">
+					<div style = "width: 200px; height: 200px; padding: 20px; background-color: none">
+						<img src = "image/python.png" style = "max-width: 100%; max-height: 100%;">
+					</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align = "center">
+					<div style = "width: 200px; height: 200px; padding: 20px; background-color: none">
+						<img src = "image/ubuntu.png" style = "max-width: 100%; max-height: 100%;">
+					</div>
+				</td>
+				<td align = "center">
+					<div style = "width: 200px; height: 200px; padding: 20px; background-color: none">
+						<img src = "image/ios-logo.png" style = "max-width: 100%; max-height: 100%;">
+					</div>
+				</td>
+				<td align = "center">
+					<div style = "width: 200px; height: 200px; padding: 20px; background-color: none">
+						<img src = "image/android.png" style = "max-width: 100%; max-height: 100%;">
+					</div>
+				</td>
+				<td align = "center">
+					<div style = "width: 200px; height: 200px; padding: 20px; background-color: none">
+						<img src = "image/windows.png" style = "max-width: 100%; max-height: 100%;">
+					</div>
+				</td>
+			</tr>
+			</table>
+		</div>
+		
+		<!--Contact section-->
+		<div class = "Contact">
+			<section id = "Contact-section" style = "">
+				Contact
+			</section>
+			<div style = "width: 100%; height: auto; display: flex; justify-content: center; background-color: none">
+			<table style = "width: 50%; height: auto; align-self: center; margin: 50px;">
+					<tr>
+						<td align = "center" height = "40" width = "40">
+							<img src = "image/mail.png" style = "max-width: 100%; max-height: 100%">
+						</td>
+						<td align = "center" height = "40" width = "40">
+							<img src = "image/Smartphone-3-icon-whiterim.png" style = "max-width: 100%; max-height: 100%">
+						</td>
+						<td align = "center" height = "40" width = "40">
+							<img src = "image/home-512-whiterim.png" style = "max-width: 100%; max-height: 100%">
+						</td>
+					</tr>
+					<tr>
+						<td align = "center">
+							<p id = "tableData">khoan8@uci.edu</p>
+						</td>
+						<td align = "center">
+							<p id = "tableData">714-331-0463</p>
+						</td>
+						<td align = "center">
+							<p id = "tableData">
+								6210 Donald Bren Hall<br> 
+								Irvine, CA 92697-3425
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td align = "center" height = "40">
+							<a href="mailto:khoan8@uci.edu?Subject=Hello%20again" target="_top" style = "text-decoration: none; color: black;"><strong><p>Click here to email.</p></strong></a>
+						</td>
+						<td align = "center" height = "40">
+							<a href = "tel:+17143310463" style = "text-decoration: none; color: black;"><strong><p>Click here to call.</p></strong></a>
+						</td>
+						<td align = "center" height = "40">
+							<a href = "https://www.google.com/maps/search/6210+Donald+Bren+Hall+Irvine,+CA+92697-3425/@33.6440409,-117.8439219,17.54z" target = "_blank" style = "text-decoration: none; color: black;"><strong><p>Click here to Google Map.</p></strong></a>
+						</td>
+					</tr>
+					<tr>
+						<td align = "right" height = "40" width = "40">
+							
+						</td>
+						<td align = "center" height = "40" width = "40">
+
+						</td>
+						<td align = "left" height = "40" width = "40">
+
+						</td>	
+					</tr>
+					<tr>
+						<td align = "right" height = "60" width = "40">
+							<a href = "https://github.com/dkhoan8" target = "_blank" style = ""><img src = "image/GitHubIcon64.png" style = "max-width: 70%; max-height: 70%"></a>
+						</td>
+						<td align = "center" height = "60" width = "40">
+							<a href = "https://www.facebook.com/nick.nguyen.10" target = "_blank" style = ""><img src = "image/Facebook-logo.png" style = "max-width: 70%; max-height: 70%"></a>
+						</td>
+						<td align = "left" height = "60" width = "40">
+							<a href = "https://www.linkedin.com/in/khoa-nguyen-a532b9156/" target = "_blank" style = ""><img src = "image/linkedin.png" style = "max-width: 70%; max-height: 70%"></a>
+						</td>	
+					</tr>
+				</table>
+			</div>
+		</div>
+	</section>
+</div>
+
+
+
+
+<script>
+	var LangChart = document.getElementById('LangSkill').getContext('2d');
+	var ToolChart = document.getElementById('ToolSkill').getContext('2d');
+	var CSChart = document.getElementById('CS').getContext('2d');
+	var MathChart = document.getElementById('Math').getContext('2d');
+	var GEChart = document.getElementById('GE').getContext('2d');
+	
+	Chart.defaults.global.defaultFontFamily = 'Lato';
+	Chart.defaults.global.defaultFontSize = 15;
+	
+	Chart.pluginService.register({
+		beforeDraw: function (chart) {
+			if (chart.config.options.elements.center) {
+        //Get ctx from string
+        var ctx = chart.chart.ctx;
+        
+				//Get options from the center object in options
+        var centerConfig = chart.config.options.elements.center;
+      	var fontStyle = centerConfig.fontStyle || 'Arial';
+				var txt = centerConfig.text;
+        var color = centerConfig.color || '#000';
+        var sidePadding = centerConfig.sidePadding || 20;
+        var sidePaddingCalculated = (sidePadding/100) * (chart.innerRadius * 2)
+        //Start with a base font of 30px
+        ctx.font = "30px " + fontStyle;
+        
+				//Get the width of the string and also the width of the element minus 10 to give it 5px side padding
+        var stringWidth = ctx.measureText(txt).width;
+        var elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
+
+        // Find out how much the font can grow in width.
+        var widthRatio = elementWidth / stringWidth;
+        var newFontSize = Math.floor(30 * widthRatio);
+        var elementHeight = (chart.innerRadius * 2);
+
+        // Pick a new font size so it will not be larger than the height of label.
+        var fontSizeToUse = Math.min(newFontSize, elementHeight);
+
+				//Set font settings to draw it correctly.
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
+        var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
+        ctx.font = fontSizeToUse+"px " + fontStyle;
+        ctx.fillStyle = color;
+        
+        //Draw text in center
+        ctx.fillText(txt, centerX, centerY);
+			}
+		}
+	});
+	
+	var c_CS = {
+			type: 'doughnut',
+			data: {
+				labels: [
+				  "Progress"
+				],
+				datasets: [{
+					data: [100],
+					backgroundColor: [
+					  "#36A2EB"
+					],
+					hoverBackgroundColor: [
+					  "#F5F3EE"
+					],
+					borderWidth: [2],
+					hoverBorderWidth: [5],
+					hoverBorderColor: ['#41d6c3']
+				}],
+			},
+			options: {
+				responsive: false,
+				elements: {
+					center: {
+						text: '100%',
+						color: '#000000', // Default is #000000
+						fontStyle: 'Lato', // Default is Arial
+						sidePadding: 20 // Defualt is 20 (as a percentage)
+					}
+				},
+				legend: {
+					display: false
+				},
+				title:{
+					display: true,
+					text: 'Computer Science Courses from Community COllege',
+					fontSize: 20
+				}		
+			}
+	};
+	
+	var c_Math = {
+			type: 'doughnut',
+			data: {
+				labels: [
+				  "Progress"
+				],
+				datasets: [{
+					data: [100],
+					backgroundColor: [
+					  "#FF6384"
+					],
+					hoverBackgroundColor: [
+					  "#F5F3EE"
+					],
+					borderWidth: [2],
+					hoverBorderWidth: [5],
+					hoverBorderColor: ['#41d6c3']
+				}],
+			},
+			options: {
+				responsive: false,
+				elements: {
+					center: {
+						text: '100%',
+						color: '#000000', // Default is #000000
+						fontStyle: 'Lato', // Default is Arial
+						sidePadding: 20 // Defualt is 20 (as a percentage)
+					}
+				},
+				legend: {
+					display: false
+				},
+				title:{
+					display: true,
+					text: 'Mathematic for University of California, Irvine',
+					fontSize: 20
+				}		
+			}
+	};
+	
+	var c_GE = {
+			type: 'doughnut',
+			data: {
+				labels: [
+				  "Progress"
+				],
+				datasets: [{
+					data: [100],
+					backgroundColor: [
+					  "#C1E1A6"
+					],
+					hoverBackgroundColor: [
+					  "#F5F3EE"
+					],
+					borderWidth: [2],
+					hoverBorderWidth: [5],
+					hoverBorderColor: ['#41d6c3']
+				}],
+			},
+			options: {
+				responsive: false,
+				elements: {
+					center: {
+						text: '100%',
+						color: '#000000', // Default is #000000
+						fontStyle: 'Lato', // Default is Arial
+						sidePadding: 20 // Defualt is 20 (as a percentage)
+					}
+				},
+				legend: {
+					display: false
+				},
+				title:{
+					display: true,
+					text: 'Total GE Courses for Transfer to UC Irvine',
+					fontSize: 20
+				}		
+			}
+	};
+	var ChartForLanguages = new Chart
+	(LangChart,
+		{
+			type: 'radar',
+			data:
+			{
+				labels:['C++','C#','Java','Javascript','Python','MySQL'],
+				datasets:[{
+					label:'Language',
+					data:[100,100,90,90,80,75],
+					backgroundColor:[
+						'rgba(255,99,132,0.6)',
+						'rgba(255,99,132,0.6)',
+						'rgba(255,99,132,0.6)',
+						'rgba(255,99,132,0.6)',
+						'rgba(255,99,132,0.6)',
+						'rgba(255,99,132,0.6)'
+					],
+					borderWidth: 2,
+					borderColor: '#777',
+					hoverBorderWidth: 3,
+					hoverBorderColor: '#FFFFFF'
+				}]
+			},
+			options:{
+				responsive: false,
+				title:
+				{
+					display: true,
+					text: 'Language',
+					fontSize: 20
+				},
+				legend:{
+					display: false
+				},
+				layout:
+				{
+					left: 50,
+					right: 50,
+					top: 50,
+					bottom:50
+				},
+				scale: {
+					ticks:{
+						beginAtZero: true, 
+						fontSize: 12
+					},
+					pointLabels:{
+						fontSize:17
+					}
+				}
+			}
+		}
+	);
+	
+	var ChartForTools = new Chart
+	(ToolChart,
+		{
+			type: 'bar',
+			data:
+			{
+				labels:['VisualStu','Unity','Notepad++','Atom','CmdPrompt','MySQL','Other'],
+				datasets:[{
+					label:'Tool',
+					data:[100,85,90,85,75,75,70,65,0],
+					backgroundColor:[
+						'rgba(75,192,192,0.6)',
+						'rgba(75,192,192,0.6)',
+						'rgba(75,192,192,0.6)',
+						'rgba(75,192,192,0.6)',
+						'rgba(75,192,192,0.6)',
+						'rgba(75,192,192,0.6)',
+						'rgba(75,192,192,0.6)'
+					],
+					borderWidth: 2,
+					borderColor: '#777',
+					hoverBorderWidth: 3,
+					hoverBorderColor: '#FFFFFF'
+				}]
+			},
+			options:{
+				responsive: false,
+				title:
+				{
+					display: true,
+					text: 'Tool',
+					fontSize: 20
+				},
+				legend:{
+					display: false
+				},
+				layout:
+				{
+					left: 50,
+					right: 50,
+					top: 50,
+					bottom:50
+				}
+			}
+		}
+	);
+	
+	var ChartForCS = new Chart(CSChart,c_CS);
+	var ChartForMath = new Chart(MathChart,c_Math);
+	var ChartForGE = new Chart(GEChart,c_GE);
+</script>
+</body>
+</html>
